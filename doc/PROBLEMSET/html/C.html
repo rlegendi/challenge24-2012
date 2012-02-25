@@ -1,0 +1,79 @@
+<html>
+<head><title>C. Lumberjack</title></head>
+<body>
+<div align="justify">
+
+<h2>C. Lumberjack</h2>
+<table border=0 cellpadding=0 cellspacing=0>
+<tr><td align="justify">
+<p>
+A lumberjack has to cut down N trees which were planted
+along a straight line with fixed distance between them.
+<p>
+If the lumberjack cuts down a tree he can make it fall
+either left or right along the line.
+A tree can topple another tree if it falls on it and may
+cause the fall of many other trees (by the domino effect).
+<p>
+Which trees should the lumberjack cut down so that all
+trees fall with the minimum number of cuts?
+
+<td> &nbsp;&nbsp; <td>
+<img alt="chainsaw" src="chainsaw.jpg">
+<br><font size="-3">source:<br>http://pixabay.com/en/saw-chainring-chainsaw-chain-wood-5901/</font>
+</table>
+
+<p>
+Constraints of the domino effect:
+<ul>
+<li>The height of the ith tree is H[i], 1 &lt;= i &lt;= N
+<li>If tree i falls left then all standing trees j fall left as well for i-H[i] &lt; j &lt; i
+<li>If tree i falls right then all standing trees j fall right as well for i &lt; j &lt; i+H[i]
+<li>A tree can only fall once
+</ul>
+
+<h3>Input</h3>
+<pre>
+N
+H[1] H[2] ... H[N]
+</pre>
+
+<h3>Output</h3>
+<pre>
+K
+T[1] T[2] ... T[K]
+</pre>
+K is the optimal number of tree cuts.
+The absolute value of T[i] is the index of the ith tree that is cut down.
+(Note that the order in which trees are cut down may matter.)
+T[i] is negative if tree T[i] falls left.
+
+<h3>Example</h3>
+<table width=100% align=left border=1>
+<tr>
+<th width=50%>Input
+<th width=50%>Output
+
+
+<tr><td>
+<pre>
+5
+1 2 3 1 1
+</pre>
+
+<td>
+<p>
+Two of the possible outputs are
+<pre>
+2
+3 -2
+</pre>
+or
+<pre>
+2
+1 2
+</pre>
+</table>
+</div>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<html>
+<head><title>E. Beacons</title></head>
+<body>
+<div align="justify">
+
+<h2>E. Beacons</h2>
+<table border=0 cellpadding=0 cellspacing=0>
+<tr><td align="justify">
+<p>
+Our researchers have developed an advanced acoustic positioning system. We now
+have an installed prototype, and the field test is about to begin.
+
+<p>
+The positioning system consists of several rotating towers, deployed at known
+locations. Each tower has a loudspeaker attached to it, emitting a sinewave
+sound at a constant frequency. The towers rotate around their vertical axis
+counterclockwise once a second, while keeping their heading synchronized at all
+times (for example, they always face north at the same time).
+
+<p>
+The sound attenuates with distance
+(because the power of the signal spreads out on a large surface):
+the measured power is proportional to <code>1/R^2</code> and the
+measured amplitude to <code>1/R</code> where <code>R</code> is
+the distance from the tower.
+
+<td> &nbsp;&nbsp; <td align="right">
+<img alt="compass" src="compass.gif">
+<br><font size="-3">Photo by NASA</font>
+</table>
+
+<p>
+The towers and the rotating mechanisms were very expensive, so we had to choose
+cheap loudspeakers. They cannot be exactly calibrated to the same loudness.
+Even so, the generated amplitudes shouldn't differ more than 10% between towers
+(measured at the same distance and direction).
+
+<p>
+The speakers are installed in a way that the emitted signal is strongest
+in the direction of the speaker, with a +/- 45 degree spread.
+
+<p>
+The prototype installation is situated in a friendly, sheltered valley,
+with no wind or any source of external noise.
+
+<p>
+The speed of sound in the local environment was measured to be a stable 340.29 m/s.
+
+<p>
+Our coordinate system uses the meter for a unit. X and Y are euclidean coordinates.
+The earth can be considered completely flat in the area of the prototype. The value
+of X grows from west to east, that of Y grows from south to north.
+
+<p>
+The towers are described in the <tt>towers</tt> file. Each line
+in the file gives the position and the emitted frequency of a tower, like so:
+
+<pre>
+X Y FREQ
+</pre>
+
+<p>
+Your task is to take a number of sound recordings we made in the field,
+and in each case determine the position of the recording apparatus.
+The apparatus was not moved during recording.
+
+<h3>Input</h3>
+The inputs are WAV files - sound recordings made at various positions.
+
+<h3>Output</h3>
+The output should be the position of the microphone:
+<pre>
+X Y
+</pre>
+
+<p>
+For the field test to be considered successful, the calculated and real
+position must not differ by more than 2 meters.
+
+<h3>Example input</h3>
+You may use <code>example.wav</code> input for calibration.
+
+<h3>Example output</h3>
+Solution for <code>example.wav</code>:
+<pre>
+-179.4 -95.3
+</pre>
+</div>
+</body>
+</html>

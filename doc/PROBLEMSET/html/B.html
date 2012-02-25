@@ -1,0 +1,72 @@
+<html>
+<head><title>B. Mines</title></head>
+<body>
+<div align="justify">
+
+<h2>B. Mines</h2>
+<table border=0 cellpadding=0 cellspacing=0>
+<tr><td align="justify">
+
+<p>
+As a member of the Special Operations Forces of a small country, your job is to clear a minefield.
+Unfortunately, military top brass is rather more concerned with politics then the general welfare of their officers.
+Being in a sad state of ignorance of how mines (and the bodies of soldiers)
+actually work, they demand you clear the minefield by putting timed ignition
+charges on each mine.
+<p>
+This does require you to personally fiddle with armed mines of various sizes
+but invariable deadliness.
+<p>
+Thankfully, you realize in time that when the primary charge of these mines
+blows up, the shockwave is usually strong enough to blow up other mines in the
+vicinity - and the other mines blowing up can blow up mines yet farther away.
+If you could determine which mines to set off to maximize the cascade effect,
+you could minimize the number of mines you have to manipulate with your own
+quite defenseless hands.
+
+<p>
+In short: given a precise map of the minefield, your task is to eliminate all mines
+by directly setting off as few mines as possible.
+
+<td> &nbsp;&nbsp; <td>
+<img alt="mine" src="mine.jpg">
+<br><font size="-3">source:<br>http://en.wikipedia.org/wiki/File:Waud_-_infernal_machines.jpg</font>
+</table>
+
+<h3>Input</h3>
+<pre>
+N
+X[0] Y[0] R[0]
+...
+X[N-1] Y[N-1] R[N-1]
+</pre>
+<code>N</code> is the number of mines, <code>X[i] Y[i]</code>
+is the coordinates of the ith mine and <code>R[i]</code>
+is its detonation radius.
+
+<h3>Output</h3>
+<pre>
+M[1] M[2] ... M[K]
+</pre>
+K is the minimum number of mine detonations,
+M[i] is the index of the ith detonated mine.
+
+<!--NewPage-->
+<h3>Example input</h3>
+<pre>
+5
+-15 4 10
+12 4 8
+-10 -4 8
+2 10 16
+18 10 8
+</pre>
+
+<h3>Example output</h3>
+<p>
+<pre>
+0 3
+</pre>
+</div>
+</body>
+</html>

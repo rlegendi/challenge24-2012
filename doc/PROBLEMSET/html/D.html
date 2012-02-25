@@ -1,0 +1,119 @@
+<html>
+<head><title>D. If</title></head>
+<body>
+<div align="justify">
+
+<h2>D. If</h2>
+<table border=0 cellpadding=0 cellspacing=0>
+<tr><td align="justify">
+
+<p>Your task is to optimize the input source code for size.
+The source code will run on an 8-bit architecture.
+
+<p>
+There are 256 variables (numbered from 0 to 255), at most 2 inputs (numbered 0 and
+1) and 8 outputs (numbered from 0 to 7). All values are 8-bit unsigned integers:
+values stored in variables, read from input, written to output and existing as
+constants in the source code. All arithmetics are evaluated modulo 256.
+
+<p>
+Inputs don't change
+until the program executes the END instruction. Before running a program,
+variables and outputs are set to 0.
+<p>
+Input of this task is a source file; output is an optimized version of
+the source. A submission is not accepted, if:
+<UL>
+	<LI> it does not give the same output as the original program would, for arbitrary input; or
+	<LI> it executes more than 10^7 instructions for any input; or
+	<LI> it references an address out of boundary.
+</UL>
+
+<td> &nbsp;&nbsp; <td>
+<img alt="diagram" src="diagram.png">
+<br><font size="-3">source:<br>http://en.wikipedia.org/wiki/File:FlowchartExample.png)</font>
+</table>
+
+<!--NewPage-->
+
+<H3> Language </H3>
+
+<I>R</I>, <I>A</I> and <I>B</I> are any of the variables, <I>const</I> is a
+constant integer; <I>input(N)</I> fetches the <I>Nth</I> input;
+<I>output(N)</I> is the <I>Nth</I> output; <I>label</I> is a jump
+destination point in the source code marked by an unique integer.
+
+<table border=1 width=100%>
+	<tr><th width=60%> description                        <th>syntax in input/output files
+	<tr><th colspan=2> expressions
+	<tr><td><I>R</I> = <I>const</I>                       <td>  n,const,R
+	<tr><td><I>R</I> = <I>A</I> + <I>B</I>                <td>  +,A,B,R
+	<tr><td><I>R</I> = <I>A</I> - <I>B</I>                <td>  -,A,B,R
+	<tr><td><I>R</I> = <I>A</I> &gt; <I>B</I>             <td>  &gt;,A,B,R
+	<tr><td><I>R</I> = <I>A</I> &lt; <I>B</I>             <td>  &lt;,A,B,R
+	<tr><td><I>R</I> = <I>A</I> == <I>B</I>               <td>  =,A,B,R
+	<tr><td><I>R</I> = <I>A</I> != <I>B</I>               <td>  !,A,B,R
+	<tr><td><I>R</I> = <I>input(A)</I>                    <td>  i,A,R
+
+	<tr><td>conditional jump:
+	        <BR>IF <I>R</I> != 0 GOTO <I>label</I>        <td>  c,R,label
+	<tr><td>unconditional jump:
+	        <BR>GOTO <I>label</I>                         <td>  g,label
+	<tr><td>generating output:
+	        <BR><I>output(A)</I> = <I>R</I>               <td>  o,A,R
+	<tr><td>jump <I>label</I> (destination of jumps)      <td>  l,label
+	<tr><td>end of execution                              <td>  e
+	<tr><td>comment (whole line ignored):                 <td>  #,text
+</table>
+
+<H3> Scoring </H3>
+Score is calculated based on the number of instructions of the submission,
+compared to other teams' submissions - shorter outputs get higher scores.
+
+<!--NewPage-->
+
+<H3> Example </H3>
+<table border=1 align=left>
+<tr>
+<th>Original
+<th>Optimized
+<tr>
+<td>
+<pre>
+l,1
+n,0,2
+i,2,4
+n,1,1
+i,1,3
+n,3,2
++,4,2,4
+n,4,1
++,3,1,3
+n,2,2
++,3,2,6
+n,0,1
+o,1,6
+n,6,2
++,4,2,5
+n,1,1
+o,1,5
+e
+</pre>
+<td>
+<pre>
+n,0,2
+n,1,4
+n,6,5
+n,9,6
+i,2,1
+i,4,3
++,3,5,0
+o,2,0
++,1,6,0
+o,4,0
+e
+</pre>
+</table>
+</div>
+</html>
+</body>

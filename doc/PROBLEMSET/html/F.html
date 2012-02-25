@@ -1,0 +1,71 @@
+<html>
+<body>
+<H2> Currency hack </H2>
+<table border=0 cellpadding=0 cellspacing=0>
+<tr><td align="justify">
+
+<p>
+You end up having a small fortune in your national currency.
+
+<p>
+You have found a fast way of travelling around in your city,
+and discovered that there is an uncommonly large amount of
+independent money exchange offices (most of them opened just in the previous
+week).
+
+<p>
+The exchange offices are privately owned, and offer various different exchange
+rates. You decide to use your small fortune to exploit the exchange rate
+differences by taking your money around and converting it back and forth
+between all the different currencies.
+
+<td> &nbsp;&nbsp; <td>
+<img alt="coins" src="coins.jpg">
+</table>
+
+<p>
+Your goal is to finish with the most money possible, in your own currency,
+by the end of the day.
+
+<p>
+All money in the city is managed electronically, so there are no rounding rules;
+you can have and change fractional amounts of money.
+
+<h3> Input </h3>
+
+<p>
+First line: <I>N K S</I>, where <I>N</I> is the number of currencies
+(currency 0 is your own national currency); <I>K</I> is number of exchange
+offers and <I>S</I> is the amount of money you start with.
+
+<p>
+Next <I>K</I> lines are offers in the following format: <I>A_i B_i R_i M_i</I>,
+which means converting from <I>A_i</I> to <I>B_i</I> at rate <I>R_i</I>,
+at most <I>M_i</I> amount of money.
+
+<h3> Output </h3>
+First and only line is the maximum profit that can be realized (0.1% relative error is accepted).
+
+<h3> Example </h3>
+<table width=100% align=left border=1>
+<tr><th>Input<th>Output
+<tr><td>
+<pre>
+2 3 1000
+0 1 0.8 500
+0 1 0.9 400
+1 0 1.2 10000
+</pre>
+
+<td>
+<pre>
+32
+</pre>
+</table>
+<p>
+In this example, the first offer means that you can give them money in currency 0,
+and they give you 0.8 times that much in currency 1.
+During the whole day, you can give them at most 500.
+
+</body>
+</html>
