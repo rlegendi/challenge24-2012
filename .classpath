@@ -21,5 +21,12 @@
 	<classpathentry kind="lib" path="lib/wstx-asl-3.2.6.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jre - 1.7.0u02"/>
+	<classpathentry kind="lib" path="lib/jgraph.jar"/>
+	<classpathentry kind="lib" path="lib/jgrapht-jdk1.6.jar"/>
+	<classpathentry kind="lib" path="lib/junit.jar"/>
+	<classpathentry kind="lib" path="lib/svnant.jar"/>
+	<classpathentry kind="lib" path="lib/svnClientAdapter.jar"/>
+	<classpathentry kind="lib" path="lib/TGGraphLayout.jar"/>
+	<classpathentry kind="lib" path="lib/xmlunit1.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
